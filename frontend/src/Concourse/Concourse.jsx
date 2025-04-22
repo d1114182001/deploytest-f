@@ -8,7 +8,7 @@ const Concourse = () => {
 
     useEffect(() => {
         const fetchTransactions = () => {
-            fetch("http://localhost:3001/extract-transactions")
+            fetch("${process.env.REACT_APP_API_URL}/extract-transactions")
                 .then((res) => res.json())
                 .then((data) => setTransactions(data))
                 .catch((error) => console.error("載入交易紀錄錯誤:", error));
